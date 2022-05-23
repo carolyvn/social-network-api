@@ -1,6 +1,8 @@
-const { connect, connection } = require('mongoose');
+const { connect, connection, connections } = require('mongoose');
 
-connect('mongodb://localhost/usersThoughts', {
+const connectionString = process.env.MONGODB_URI || 'mongodb://localhost/socail-network-api'
+
+connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
