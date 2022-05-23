@@ -9,7 +9,7 @@ module.exports = {
     },
     // Get a single user by its _id 
     getSingleUser(req, res) {
-        User.findOne({ _id: req.params.userId })
+        User.findOne({ _id: req.params.ObjectId })
           .populate({ path: 'thoughts', select: '-__v' })
           .populate({ path: 'friends', select: '-__v' })
           .then((user) => 
